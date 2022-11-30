@@ -1,3 +1,4 @@
+require "byebug"
 class Board
     
     def initialize
@@ -15,19 +16,12 @@ class Board
         @grid[row][col] = val
     end
 
-    # def populate
-    #     @grid.each do |row|
-    #         row.map do |pos|
-    #             row[pos] = 'piece'
-
-    #         end
-    #     end
-    # end
-
     def populate
         @grid.each_with_index do |rows, i|
-            
-            rows.each { |place| place = "piece" }
+            if i == 0 || i == 1 || i == 6 || i == 7
+                
+                @grid[i] = rows.map { |place| "piece" } 
+            end
         end
         @grid
     end
