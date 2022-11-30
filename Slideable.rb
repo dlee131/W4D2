@@ -1,17 +1,33 @@
 module Slideable
 
+    HORIZONTAL_DIRS = [
+    [1,0], #left
+    [0,1] #right 
+    [:dx, :dy], #up vertical
+    [:dx, :dy] #down vertical
+]
+
+# stores an array of diagonal directions
+DIAGONAL_DIRS = [
+    [:dx, :dy], #UP + left
+    [:dx, :dy], #UP + right
+    [:dx, :dy], #DOWN + LEFT
+    [:dx, :dy] #down + RIGHT
+]
+
     def horizontal_dirs
-        # getter for horizontal_dirs
         @horizontal_dirs
     end
 
     def diagonal_dirs
-        # getter for diagonal_dirs
         @diagonal_dirs
     end
+
+    
     
     # should return an array of places a piece can move to
     def moves
+
         # create an array to collect moves
     
         # iterate over each of the directions in which a slideable piece

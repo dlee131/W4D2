@@ -22,7 +22,7 @@ class Board
     def populate
         @grid.each_with_index do |rows, i|
             if i == 0 || i == 1 || i == 6 || i == 7
-                @grid[i] = rows.map { |place| Piece.new } 
+                @grid[i] = rows.map { |place| Piece.new(:p, self, [0,0]) } 
             else
                 @grid[i] = rows.map { |place| @null_piece } 
             end
@@ -47,7 +47,7 @@ class Board
     def print_board
         @grid.each do |row|
             row.each do |piece|
-                print piece.symbol
+                print piece.color
             end
             puts
         end
